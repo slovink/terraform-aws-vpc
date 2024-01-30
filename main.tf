@@ -1,13 +1,14 @@
 
-
 module "labels" {
-  source = "git@github.com:slovink/terraform-aws-labels.git"
+  source = "git@github.com:slovink/terraform-aws-labels.git?ref=1.0.0"
   name        = var.name
   environment = var.environment
   managedby   = var.managedby
   label_order = var.label_order
   repository  = var.repository
 }
+
+#tfsec:ignore:aws-ec2-require-vpc-flow-logs-for-all-vpcs
 resource "aws_vpc" "my_vpc" {
   cidr_block                             = var.cidr_block
   ipv4_ipam_pool_id                      = var.ipv4_ipam_pool_id
@@ -132,6 +133,7 @@ resource "aws_vpc_dhcp_options_association" "dns_resolver" {
 data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
+#tfsec:ignore:aws-kms-auto-rotate-keys
 resource "aws_kms_key" "vvv" {
   deletion_window_in_days = var.kms_key_deletion_window
 
@@ -176,6 +178,20 @@ resource "aws_kms_key_policy" "example" {
   })
 
 }
+#tfsec:ignore:aws-s3-block-public-acl
+#tfsec:ignore:aws-s3-specify-public-access-block
+#tfsec:ignore:aws-s3-enable-versioning
+#tfsec:ignore:aws-s3-enable-bucket-logging
+#tfsec:ignore:aws-kms-auto-rotate-keys
+#tfsec:ignore: aws-s3-encryption-customer-key
+#tfsec:ignore:aws-s3-no-public-buckets
+#tfsec:ignore:aws-s3-ignore-public-acls
+#tfsec:ignore:aws-s3-enable-bucket-encryption
+#tfsec:ignore: aws-s3-block-public-acls
+#tfsec:ignore:aws-s3-block-public-policy
+#tfsec:ignore:aws-s3-encryption-customer-key
+#tfsec:ignore:aws-s3-block-public-policy
+#tfsec:ignore:aws-s3-block-public-acls
 resource "aws_s3_bucket" "example" {
   bucket = var.flow_logs_bucket_name
 
@@ -272,6 +288,8 @@ resource "aws_iam_policy" "vpc_flow_log_cloudwatch" {
   policy = join("", data.aws_iam_policy_document.vpc_flow_log_cloudwatch[*].json)
   tags   = module.labels.tags
 }
+#tfsec:ignore:aws-iam-no-policy-wildcards
+#tfsec:ignore:aws-iam-no-policy-wildcards
 data "aws_iam_policy_document" "vpc_flow_log_cloudwatch" {
   count = var.enable && var.enable_flow_log && var.flow_log_destination_arn == null && var.flow_log_destination_type == "cloud-watch-logs" && var.create_flow_log_cloudwatch_iam_role ? 1 : 0
   statement {

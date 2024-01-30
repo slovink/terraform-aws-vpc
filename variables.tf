@@ -33,61 +33,46 @@ variable "enable" {
    default     = true
    description = "Flag to control the vpc creation."
 }
-
-variable "restrict_default_sg" {
-   type        = bool
-   default     = true
-   description = "Flag to control the restrict default sg creation."
-}
-
 variable "cidr_block" {
    type        = string
    default     = ""
    description = "CIDR for the VPC."
 }
-
 variable "additional_cidr_block" {
    type        = list(string)
    default     = []
    description = "	List of secondary CIDR blocks of the VPC."
 }
-
 variable "ipv6_cidr_block" {
    type        = string
    default     = null
    description = "IPv6 CIDR for the VPC."
 }
-
 variable "instance_tenancy" {
    type        = string
    default     = "default"
    description = "A tenancy option for instances launched into the VPC."
 }
-
 variable "enabled_dns_hostnames" {
    type        = bool
    default     = true
    description = "A boolean flag to enable/disable DNS hostnames in the VPC."
 }
-
 variable "enable_dns_support" {
    type        = bool
    default     = true
    description = "A boolean flag to enable/disable DNS support in the VPC."
 }
-
 variable "enable_flow_log" {
    type        = bool
    default     = true
    description = "Enable vpc_flow_log logs."
 }
-
 variable "ipv4_ipam_pool_id" {
    type        = string
    default     = ""
    description = "The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR."
 }
-
 variable "ipv4_netmask_length" {
    type        = string
    default     = null
@@ -99,13 +84,6 @@ variable "ipv6_ipam_pool_id" {
    default     = null
    description = "The ID of an IPv6 IPAM pool you want to use for allocating this VPC's CIDR."
 }
-
-variable "ipv6_netmask_length" {
-   type        = string
-   default     = null
-   description = "The netmask length of the IPv4 CIDR you want to allocate to this VPC. Requires specifying a ipv6_ipam_pool_id"
-}
-
 variable "default_security_group_ingress" {
    type        = list(map(string))
    default     = []
@@ -117,13 +95,6 @@ variable "default_security_group_egress" {
    default     = []
    description = "List of maps of egress rules to set on the default security group"
 }
-
-variable "enable_dhcp_options" {
-   type        = bool
-   default     = false
-   description = "Should be true if you want to specify a DHCP options set with a custom domain name, DNS servers, NTP servers, netbios servers, and/or netbios server type"
-}
-
 variable "dhcp_options_domain_name" {
    type        = string
    default     = "service.consul"
@@ -166,11 +137,6 @@ variable "ipv6_cidr_block_network_border_group" {
    description = "Set this to restrict advertisement of public addresses to a specific Network Border Group such as a LocalZone."
 }
 
-variable "aws_default_route_table" {
-   type        = bool
-   default     = true
-   description = "A boolean flag to enable/disable Default Route Table in the VPC."
-}
 
 variable "enable_network_address_usage_metrics" {
    type        = bool
@@ -194,12 +160,6 @@ variable "flow_logs_bucket_name" {
    type        = string
    default     = null
    description = "Name  (e.g. `mybucket` or `bucket101`)."
-}
-
-variable "ipam_pool_enable" {
-   type        = bool
-   default     = false
-   description = "Flag to be set true when using ipam for cidr."
 }
 
 variable "default_route_table_routes" {
@@ -344,7 +304,3 @@ variable "enable_key_rotation" {
    description = "Specifies whether key rotation is enabled. Defaults to true(security best practice)"
 }
 
-variable "block_http_traffic" {
-   type        = bool
-   default     = true
-}
