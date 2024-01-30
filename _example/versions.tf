@@ -1,13 +1,14 @@
 terraform {
-  required_version = ">= 1.3.0"
+  required_version = ">= 1.6.6"
+
   required_providers {
-    google = {
-      source  = "hashicorp/google"
-      version = ">= 4.75, < 5.0"
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.32.1"
     }
-    google-beta = {
-      source  = "hashicorp/google-beta"
-      version = ">= 4.75, < 5.13.0"
+    tls = {
+      source  = "hashicorp/tls"
+      version = ">= 3.0.0"
     }
   }
 }
