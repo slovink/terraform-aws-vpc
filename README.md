@@ -94,7 +94,7 @@ azs = ["us-east-2a", "us-east-2b", "us-east-2c"]
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.34.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws)| >= 5.32.1 |
 
 ## Modules
 
