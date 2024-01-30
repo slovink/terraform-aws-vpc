@@ -1,6 +1,6 @@
 
 module "labels" {
-  source = "git@github.com:slovink/terraform-aws-labels.git?ref=1.0.0"
+  source      = "git::ssh://git@github.com/slovink/terraform-aws-labels.git?ref=1.0.0"
   name        = var.name
   environment = var.environment
   managedby   = var.managedby
@@ -10,19 +10,19 @@ module "labels" {
 
 #tfsec:ignore:aws-ec2-require-vpc-flow-logs-for-all-vpcs
 resource "aws_vpc" "my_vpc" {
-  cidr_block                             = var.cidr_block
-  ipv4_ipam_pool_id                      = var.ipv4_ipam_pool_id
-  ipv4_netmask_length                    = var.ipv4_netmask_length
-  ipv6_cidr_block                        = var.ipv6_cidr_block
-  ipv6_netmask_length                    = var.ipv4_netmask_length
-  ipv6_ipam_pool_id                      = var.ipv6_ipam_pool_id
-  ipv6_cidr_block_network_border_group   = var.ipv6_cidr_block_network_border_group
-  instance_tenancy                       = var.instance_tenancy
-  enable_dns_support                     = var.enable_dns_support
-  enable_network_address_usage_metrics   = var.enable_network_address_usage_metrics
-  enable_dns_hostnames                   = var.enabled_dns_hostnames
-  assign_generated_ipv6_cidr_block       = var.assign_generated_ipv6_cidr_block
-  tags                                   = module.labels.tags
+  cidr_block                           = var.cidr_block
+  ipv4_ipam_pool_id                    = var.ipv4_ipam_pool_id
+  ipv4_netmask_length                  = var.ipv4_netmask_length
+  ipv6_cidr_block                      = var.ipv6_cidr_block
+  ipv6_netmask_length                  = var.ipv4_netmask_length
+  ipv6_ipam_pool_id                    = var.ipv6_ipam_pool_id
+  ipv6_cidr_block_network_border_group = var.ipv6_cidr_block_network_border_group
+  instance_tenancy                     = var.instance_tenancy
+  enable_dns_support                   = var.enable_dns_support
+  enable_network_address_usage_metrics = var.enable_network_address_usage_metrics
+  enable_dns_hostnames                 = var.enabled_dns_hostnames
+  assign_generated_ipv6_cidr_block     = var.assign_generated_ipv6_cidr_block
+  tags                                 = module.labels.tags
 
 }
 resource "aws_vpc_ipv4_cidr_block_association" "default" {
@@ -161,7 +161,7 @@ resource "aws_kms_key_policy" "example" {
       },
       "Action" : "kms:*",
       "Resource" : "*"
-    },
+      },
       {
         "Effect" : "Allow",
         "Principal" : { "Service" : "logs.${data.aws_region.current.name}.amazonaws.com" },
@@ -197,7 +197,7 @@ resource "aws_s3_bucket" "example" {
 
 }
 resource "aws_s3_bucket_ownership_controls" "example" {
-  bucket =  join("", aws_s3_bucket.example[*].id)
+  bucket = join("", aws_s3_bucket.example[*].id)
 
   rule {
     object_ownership = "BucketOwnerPreferred"
@@ -211,7 +211,7 @@ resource "aws_s3_bucket_acl" "example" {
   acl    = "private"
 }
 resource "aws_s3_bucket_public_access_block" "example" {
-  bucket = join("", aws_s3_bucket.example[*].id)
+  bucket                  = join("", aws_s3_bucket.example[*].id)
   block_public_acls       = true
   block_public_policy     = true
   ignore_public_acls      = true
@@ -278,7 +278,7 @@ data "aws_iam_policy_document" "flow_log_cloudwatch_assume_role" {
 }
 resource "aws_iam_role_policy_attachment" "vpc_flow_log_cloudwatch" {
   role       = join("", aws_iam_role.vpc_flow_log_cloudwatch[*].name)
-  policy_arn =  join("", aws_iam_policy.vpc_flow_log_cloudwatch[*].arn)
+  policy_arn = join("", aws_iam_policy.vpc_flow_log_cloudwatch[*].arn)
 
 }
 

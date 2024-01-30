@@ -1,5 +1,5 @@
 output "id" {
-  value = join("", aws_vpc.my_vpc[*].id)
+  value       = join("", aws_vpc.my_vpc[*].id)
   description = "The ID of the VPC."
 }
 output "vpc_arn" {
