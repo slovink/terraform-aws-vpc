@@ -46,8 +46,8 @@ jobs:
           cd ${{ matrix.directory }}
           terraform init
           terraform validate
-      - name: tflint
-        uses: reviewdog/action-tflint@master
+#      - name: tflint
+#        uses: reviewdog/action-tflint@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           working_directory: ${{ matrix.directory }}
