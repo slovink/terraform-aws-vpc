@@ -1,6 +1,6 @@
 
 module "labels" {
-  source      = "git::ssh://git@github.com/slovink/terraform-aws-labels.git?ref=1.0.0"
+  source      = "git::ssh://git@github.com/slovink/terraform-aws-labels.git?ref=vinod"
   name        = var.name
   environment = var.environment
   managedby   = var.managedby
@@ -23,7 +23,6 @@ resource "aws_vpc" "my_vpc" {
   enable_dns_hostnames                 = var.enabled_dns_hostnames
   assign_generated_ipv6_cidr_block     = var.assign_generated_ipv6_cidr_block
   tags                                 = module.labels.tags
-
 }
 resource "aws_vpc_ipv4_cidr_block_association" "default" {
   for_each   = toset(var.additional_cidr_block)
