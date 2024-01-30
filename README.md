@@ -23,21 +23,21 @@ To get started, make sure you have configured your AWS provider. You can use the
 
 
 ```hcl
-module "vpc" {
-  source                = "https://github.com/slovink/terraform-aws-vpc.git"
-  name                  = "yada"
-  environment           = "test"
-  cidr_block            = "10.0.0.0/16"
-  additional_cidr_block = ["192.3.0.0/16", "192.2.0.0/16"]
-}
-
+    module "vpc" {
+      source                = "slovink/vpc/aws"
+      version               = "1.0.1"
+      name                  = "app"
+      environment           = "test"
+      cidr_block            = "10.0.0.0/16"
+      additional_cidr_block = ["172.3.0.0/16", "172.2.0.0/16"]
+    }
    ```
 
 ## Examples
 For detailed examples on how to use this module, please refer to the [Examples](https://github.com/slovink/terraform-aws-vpc/tree/master/example) directory within this repository.
 
 ## Authors
-Your Name Replace **MIT** and **Cypik** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+Your Name Replace **MIT** and **slovink** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
 This project is licensed under the **MIT** License - see the [LICENSE](https://github.com/slovink/terraform-aws-vpc/blob/master/LICENSE) file for details.
@@ -56,7 +56,7 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.34.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.32.1 |
 
 ## Modules
 
