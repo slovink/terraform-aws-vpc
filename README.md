@@ -47,7 +47,7 @@ To get started, make sure you have configured your AWS provider. You can use the
 
 ```hcl
     module "vpc" {
-      source                = "git@github.com:slovink/terraform-aws-vpc.git"
+      source                = "git@github.com:slovink/terraform-aws-vpc.git?ref=v1.0.0"
       name                  = "app"
       environment           = "test"
       cidr_block            = "10.0.0.0/16"
