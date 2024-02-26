@@ -85,7 +85,7 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::ssh://git@github.com/slovink/terraform-aws-labels.git | main |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::ssh://git@github.com/slovink/terraform-aws-labels.git | 1.0.0 |
 
 ## Resources
 
