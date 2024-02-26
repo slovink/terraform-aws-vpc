@@ -1,3 +1,4 @@
+
 output "id" {
   value       = module.vpc.id
   description = "The ID of the VPC."

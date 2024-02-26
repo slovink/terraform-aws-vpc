@@ -1,3 +1,4 @@
+
 output "id" {
   value       = join("", aws_vpc.my_vpc[*].id)
   description = "The ID of the VPC."
