@@ -17,7 +17,7 @@
 <a href="https://www.terraform.io">
   <img src="https://img.shields.io/badge/Terraform-v1.7.0-green" alt="Terraform">
 </a>
-<a href="https://github.com/slovink/terraform-aws-vpc/blob/main/LICENSE">
+<a href="https://github.com/slovink/terraform-aws-vpc/blob/vinod/LICENSE">
   <img src="https://img.shields.io/badge/License-APACHE-blue.svg" alt="Licence">
 </a>
 
@@ -34,16 +34,6 @@
 </a>
 
 
-## Table of Contents
-- [Overview](#overview)
-- [Introduction](#Introduction)
-- [Usage](#usage)
-- [Examples](#examples)
-- [Authors](#authors)
-- [License](#license)
-- [Inputs](#inputs)
-- [Outputs](#outputs)
-
 ## Overview
 This Terraform module creates an AWS Virtual Private Cloud (VPC) along with additional configuration options.
 
@@ -58,7 +48,6 @@ To get started, make sure you have configured your AWS provider. You can use the
 ```hcl
     module "vpc" {
       source                = "slovink/vpc/aws"
-      version               = "1.0.1"
       name                  = "app"
       environment           = "test"
       cidr_block            = "10.0.0.0/16"
@@ -74,7 +63,7 @@ To get started, make sure you have configured your AWS provider. You can use the
 Your Name Replace **MIT** and **slovink** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 ## License
-This project is licensed under the **MIT** License - see the [LICENSE](https://github.com/slovink/terraform-aws-vpc/blob/master/LICENSE) file for details.
+This project is licensed under the **MIT** License - see the [LICENSE](https://github.com/slovink/terraform-aws-vpc/blob/vinod/LICENSE) file for details.
 
 
 <!-- BEGIN_TF_DOCS -->
@@ -96,7 +85,7 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::ssh://git@github.com/slovink/terraform-aws-labels.git | vinod |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::ssh://git@github.com/slovink/terraform-aws-labels.git | main |
 
 ## Resources
 
@@ -202,3 +191,5 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 | <a name="output_vpc_ipv6_association_id"></a> [vpc\_ipv6\_association\_id](#output\_vpc\_ipv6\_association\_id) | The association ID for the IPv6 CIDR block. |
 | <a name="output_vpc_main_route_table_id"></a> [vpc\_main\_route\_table\_id](#output\_vpc\_main\_route\_table\_id) | The ID of the main route table associated with this VPC. |
 <!-- END_TF_DOCS -->
+
+
