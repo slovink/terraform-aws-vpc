@@ -67,7 +67,8 @@ To get started, make sure you have configured your AWS provider. You can use the
    ```
 
 ## Examples
-For detailed examples on how to use this module, please refer to the [Examples](https://github.com/slovink/terraform-aws-vpc/tree/master/example) directory within this repository.
+**IMPORTANT:** Since the `vinod` branch used in `source` varies based on new modifications, we suggest that you use the release versions [here](https://github.com/slovink/terraform-aws-vpc/releases).
+
 
 ## Authors
 Your Name Replace **MIT** and **slovink** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
@@ -95,7 +96,7 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::ssh://git@github.com/slovink/terraform-aws-labels.git | vinod |
+| <a name="module_vpc"></a> [vpc](#module\_vpc) | git::ssh://git@github.com/slovink/terraform-aws-vpc.git | vinod |
 
 ## Resources
 
