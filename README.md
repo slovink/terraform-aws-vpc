@@ -5,7 +5,7 @@
 
 
 <h1 align="center">
-    Terraform AWS vpc
+    Terraform AWS VPC
 </h1>
 
 <p align="center" style="font-size: 1.2rem;">
@@ -96,7 +96,7 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::ssh://git@github.com/slovink/terraform-aws-labels.git | vinod |
+| <a name="module_vpc"></a> [vpc](#module\_vpc) | git::ssh://git@github.com/slovink/terraform-aws-vpc.git | vinod |
 
 ## Resources
 
