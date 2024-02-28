@@ -43,7 +43,7 @@ usage : |-
   ```hcl
 
     module "vpc" {
-      source                = "git@github.com:slovink/terraform-aws-vpc.git?ref=v1.0.0"
+      source                = "https://github.com/slovink/terraform-aws-vpc.git?ref=v1.0.0"
       name                  = "yada"
       environment           = "test"
       cidr_block            = "10.0.0.0/16"

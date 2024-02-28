@@ -47,7 +47,7 @@ To get started, make sure you have configured your AWS provider. You can use the
 
 ```hcl
     module "vpc" {
-      source                = "git@github.com:slovink/terraform-aws-vpc.git?ref=v1.0.0"
+      source                = "https://github.com/slovink/terraform-aws-vpc.git?ref=v1.0.0"
       name                  = "app"
       environment           = "test"
       cidr_block            = "10.0.0.0/16"
@@ -85,7 +85,7 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::ssh://git@github.com/slovink/terraform-aws-labels.git | 1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | https://github.com/slovink/terraform-aws-labels.git | 1.0.0 |
 
 ## Resources
 
